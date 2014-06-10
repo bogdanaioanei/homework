@@ -1,0 +1,25 @@
+<dataset>
+	<users id="0" username="admin" password="admin" enable="true"
+		email="bogdan@test.ro" first_name="bogdan" last_name="aioanei" />
+	<users id="1" username="heisenberg" password="chemistry" enable="true"
+		email="walt@test.ro" first_name="walter" last_name="white" />
+
+	<authorities id="0" role="ADMIN" user_id="0" />
+	<authorities id="1" role="USER" user_id="1" />
+
+	<loans id="0" user_id="0" loan_amount="100" amount_paid="0"
+		amount_left_to_pay="150" expiration_date="2013-07-27"
+		initial_interest_rate="1.5" current_interest_rate="1.5" loan_uid="ABC" />
+	<loans id="1" user_id="1" loan_amount="100" amount_paid="0"
+		amount_left_to_pay="225" expiration_date="2013-07-27"
+		initial_interest_rate="1.5" current_interest_rate="2.25" loan_uid="XYZ" />
+
+	<loan_requests id="0" loan_id="0" ip_address="127.0.0.1"
+		request_date="2013-01-27" />
+	<loan_requests id="1" loan_id="1" ip_address="127.0.0.1"
+		request_date="2013-01-27" />
+
+	<loan_extensions id="0" loan_id="1"
+		new_expiration_date="2013-08-04" interest_rate_multiplier="1.5"
+		new_interest_rate="2.25" loan_extension_uid="extXYZ" />
+</dataset>

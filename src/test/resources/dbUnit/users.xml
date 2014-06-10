@@ -1,0 +1,9 @@
+<dataset>
+	<users id="0" username="admin" password="admin" enable="true"
+		email="bogdan@test.ro" first_name="bogdan" last_name="aioanei" />
+	<users id="1" username="heisenberg" password="chemistry" enable="true"
+		email="walt@test.ro" first_name="walter" last_name="white" />
+
+	<authorities id="0" role="ADMIN" user_id="0" />
+	<authorities id="1" role="USER" user_id="1" />
+</dataset>
