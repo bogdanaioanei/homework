@@ -1,5 +1,10 @@
 package com.fourfinance.homework.services;
 
+import com.fourfinance.homework.base.AbstractTest;
+import com.fourfinance.homework.entities.Loan;
+import com.fourfinance.homework.formData.LoanForm;
+import com.fourfinance.homework.repositories.LoanRepository;
+import com.fourfinance.homework.repositories.LoanRequestRepository;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
@@ -10,16 +15,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.fourfinance.homework.base.AbstractMvcTest;
-import com.fourfinance.homework.entities.Loan;
-import com.fourfinance.homework.formData.LoanForm;
-import com.fourfinance.homework.repositories.LoanRepository;
-import com.fourfinance.homework.repositories.LoanRequestRepository;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class LoanServiceTest extends AbstractMvcTest {
+public class LoanServiceTest extends AbstractTest {
 
 	@Autowired
 	private LoanService loanService;

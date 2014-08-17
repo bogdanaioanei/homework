@@ -1,8 +1,7 @@
 package com.fourfinance.homework.services;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
+import com.fourfinance.homework.base.AbstractTest;
+import com.fourfinance.homework.formData.LoanForm;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.junit.Before;
@@ -16,10 +15,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.validation.BindingResult;
 
-import com.fourfinance.homework.base.AbstractMvcTest;
-import com.fourfinance.homework.formData.LoanForm;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-public class LoanRiskAnalysisServiceTest extends AbstractMvcTest {
+public class LoanRiskAnalysisServiceTest extends AbstractTest {
 
 	@Autowired
 	private UserDetailsService userDetailsService;

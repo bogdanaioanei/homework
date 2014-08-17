@@ -14,8 +14,6 @@ import com.fourfinance.homework.config.TestConfig;
  * Concrete test classes will extend this class when loading the WebContext is
  * necessary
  * */
-@ContextConfiguration(classes = { TestConfig.class })
-@WebAppConfiguration
 public abstract class AbstractMvcTest extends AbstractTest {
 
 	@Autowired

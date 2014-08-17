@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Date;
 
+import com.fourfinance.homework.base.AbstractTest;
 import org.joda.time.DateTime;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import com.fourfinance.homework.entities.Loan;
 import com.fourfinance.homework.entities.LoanExtension;
 import com.fourfinance.homework.repositories.LoanExtensionRepository;
 
-public class LoanExtensionServiceTest extends AbstractMvcTest {
+public class LoanExtensionServiceTest extends AbstractTest {
 
 	@Autowired
 	private LoanService loanService;

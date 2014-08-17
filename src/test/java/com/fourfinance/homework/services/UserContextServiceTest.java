@@ -1,10 +1,6 @@
 package com.fourfinance.homework.services;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-
+import com.fourfinance.homework.base.AbstractTest;
 import org.junit.After;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +10,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.fourfinance.homework.base.AbstractMvcTest;
+import static org.junit.Assert.*;
 
-public class UserContextServiceTest extends AbstractMvcTest {
+public class UserContextServiceTest extends AbstractTest {
 
 	@Autowired
 	private UserDetailsService userDetailsService;

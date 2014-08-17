@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.fourfinance.homework.enums.UserRoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -51,10 +53,6 @@ public class HomeLoanController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 
-		if (!userContextService.isAuthenticated()) {
-			return "redirect:/login";
-		}
-
 		model.addAttribute("loanModel", new LoanForm());
 
 		return "home";
@@ -63,10 +61,6 @@ public class HomeLoanController {
 	@RequestMapping(value = "/loan/request", method = RequestMethod.POST)
 	public String requestLoan(@ModelAttribute("loanModel") @Valid LoanForm loanForm, BindingResult bindingResult,
 			HttpServletRequest request) {
-
-		if (!userContextService.isAuthenticated()) {
-			return "redirect:/login";
-		}
 
 		String ipAddress = IpAddressUtil.getIpFromRequest(request);
 
@@ -85,10 +79,6 @@ public class HomeLoanController {
 	@RequestMapping(value = "/loan/history", method = RequestMethod.GET)
 	public String showLoanHistory(Model model) {
 
-		if (!userContextService.isAuthenticated()) {
-			return "redirect:/login";
-		}
-
 		model.addAttribute("loanHistory", userService.getLoanHistory());
 
 		return "loan/history";
@@ -96,10 +86,6 @@ public class HomeLoanController {
 
 	@RequestMapping(value = "/loan/extend", method = RequestMethod.POST)
 	public String extendLoan(@RequestParam(value = "loanUID") String loanUID, HttpServletResponse response) {
-
-		if (!userContextService.isAuthenticated()) {
-			return "redirect:/login";
-		}
 
 		if (!loanValidatorService.loanExists(loanUID)) {
 			response.setStatus(HttpStatus.FORBIDDEN.value());
