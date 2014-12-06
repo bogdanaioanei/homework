@@ -34,12 +34,6 @@ public class LoanRiskAnalysisServiceTest extends AbstractTest {
 		return "dbunit/loans.xml";
 	}
 
-	@Override
-	@Before
-	public void setUp() throws Exception {
-		super.setUp();
-	}
-
 	@Test
 	public void testLoanHasTimeIntervalRisk() {
 		LoanForm okLoan = new LoanForm();

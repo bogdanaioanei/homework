@@ -31,12 +31,12 @@ public abstract class AbstractTest {
 	protected abstract String xmlFilePath();
 
 	@Before
-	public void setUp() throws Exception {
+	public void initDB() {
 		dbUtil = new DBUtil(dataSource, xmlFilePath());
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void closeDBConnection() {
 		dbUtil.close();
 	}
 

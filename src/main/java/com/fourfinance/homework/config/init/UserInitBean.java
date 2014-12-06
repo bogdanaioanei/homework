@@ -14,7 +14,7 @@ public class UserInitBean implements InitializingBean {
 	private UserService userService;
 
 	@Override
-	public void afterPropertiesSet() throws Exception {
+	public void afterPropertiesSet() {
 
 		UserRegisterForm userAdmin = new UserRegisterForm();
 		userAdmin.setFirstName("Bogdan");

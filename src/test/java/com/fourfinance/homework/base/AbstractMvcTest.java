@@ -21,10 +21,8 @@ public abstract class AbstractMvcTest extends AbstractTest {
 	
 	protected MockMvc mockMvc;
 
-	@Override
     @Before
-    public void setUp() throws Exception {
-		super.setUp();
+    public void initMockMVC() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 }

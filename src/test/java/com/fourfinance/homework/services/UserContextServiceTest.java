@@ -26,8 +26,7 @@ public class UserContextServiceTest extends AbstractTest {
 	}
 	
 	@After
-	public void tearDown() throws Exception {
-		super.tearDown();
+	public void tearDown() {
 		SecurityContextHolder.clearContext();
 	}
 

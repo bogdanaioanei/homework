@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import static org.joda.time.DateTime.now;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -36,10 +37,8 @@ public class HomeLoanControllerTest extends AbstractMvcTest {
 		return "dbunit/loans.xml";
 	}
 
-	@Override
 	@After
-	public void tearDown() throws Exception {
-		super.tearDown();
+	public void tearDown() {
 		SecurityContextHolder.clearContext();
 	}
 
@@ -112,7 +111,7 @@ public class HomeLoanControllerTest extends AbstractMvcTest {
 	public void testRequestLoan_withTimeIntervalRisks() throws Exception {
 		setAdminAsLoggedInUser();
 
-		DateTime now = DateTime.now();
+		DateTime now = now();
 		DateTime invalidDateTime = new DateTime(now.getYear(), now.getMonthOfYear(), now.getDayOfMonth(), 4, 30, 0);
 
 		CurrentDateMock mockDate = currentDate;
@@ -158,11 +157,9 @@ public class HomeLoanControllerTest extends AbstractMvcTest {
 	}
 
 	private String getFutureDateString() {
-		DateTime now = DateTime.now();
-		DateTime futureDate = now.plusYears(1);
-		String dateString = futureDate.getYear() + "-" + futureDate.getMonthOfYear() + "-" + futureDate.getDayOfMonth();
+		DateTime futureDate = now().plusYears(1);
 
-		return dateString;
+        return futureDate.getYear() + "-" + futureDate.getMonthOfYear() + "-" + futureDate.getDayOfMonth();
 	}
 
 	private void setAdminAsLoggedInUser() {

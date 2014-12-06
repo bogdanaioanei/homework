@@ -37,10 +37,8 @@ public class LoanServiceTest extends AbstractTest {
 		return "dbunit/loans.xml";
 	}
 
-	@Override
 	@After
-	public void tearDown() throws Exception {
-		super.tearDown();
+	public void tearDown() {
 		SecurityContextHolder.clearContext();
 	}
 
